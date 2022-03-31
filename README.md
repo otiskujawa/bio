@@ -1,2 +1,2 @@
 # bio
-my bio page
+my shitty bio page
