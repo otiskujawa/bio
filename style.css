@@ -1,0 +1,355 @@
+body {
+    --1clr: #007bff;
+    --2clr: #7b00ff;
+    --txclr: #fff;
+    background: linear-gradient(20deg, var(--1clr), var(--2clr));
+    font-family: 'Ubuntu', sans-serif;
+    overflow-x: hidden;
+    overflow-y: hidden;
+    margin: 0px !important;
+}
+
+@keyframes path1 {
+    0% {
+        transform: rotateZ(-90deg) translateZ(0);
+    }
+    100% {
+        transform: rotateZ(0deg) translateZ(0);
+    }
+}
+
+.avatar {
+    margin-top: 100px;
+    border-radius: 20px;
+    background-color: #30303030;
+    height: 200px;
+    width: 200px;
+    transition-duration: 0.4s;
+    animation: path1 1s 1;
+    animation-fill-mode: forwards;
+    animation-timing-function: ease-in-out;
+}
+
+.avatar:hover {
+    background-color: #30303010;
+}
+
+#main {
+    width: 100%;
+    left: 0px !important;
+    margin: 0px;
+}
+
+#profile {
+    margin: auto;
+    color: var(--txclr);
+    font-size: 32px;
+    overflow-x: hidden;
+    overflow-y: visible;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+    height: 100%;
+    overflow-wrap: break-word;
+    width: 80%;
+}
+
+#profile:link {
+    color: var(--txclr) !important;
+}
+
+#profile:link:hover {
+    color: var(--txclr) !important;
+}
+
+a:-webkit-any-link {
+    color: var(--txclr) !important;
+    text-decoration: none;
+}
+
+#container {
+    margin: 0px !important;
+}
+
+#profile::-webkit-scrollbar {
+    display: none;
+}
+
+#sidebar {
+    margin-top: 20%;
+    margin-left: 0px !important;
+    left: 0px;
+    width: 80px;
+    height: 200px;
+    float: left;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: stretch;
+    gap: 0px;
+    background: linear-gradient(200deg, var(--1clr), var(--2clr));
+    border-radius: 0px 20px 20px 0px;
+    position: absolute;
+}
+
+#smoltxt {
+    color: var(--txclr);
+    font-size: 20px;
+}
+
+.sbp {
+    align-self: center;
+    height: 50%;
+    width: 100%;
+    background-color: #30303030;
+    display: flex;
+    align-items: center;
+    height: 100%;
+    transition-duration: 0.4s;
+}
+
+.sbe {
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    opacity: 0.5;
+    fill: #303030;
+    display: block;
+    margin: 0 auto;
+    transition-duration: 0.3s;
+}
+
+.sbp:hover .sbe {
+    opacity: 0.9;
+    color: #bfdeff;
+    fill: var(--txclr);
+}
+
+.sbp:hover {
+    cursor: pointer;
+    background-color: var(--txclr)40;
+}
+
+
+/*╦══╡Pierwszy i ostatni element ma zaokrąglone narożniki╞══
+──╜*/
+
+#sidebar .sbp:first-child {
+    border-radius: 0px 20px 0px 0px;
+}
+
+#sidebar .sbp:last-child {
+    border-radius: 0px 0px 20px 0px;
+}
+
+
+/* Popup box BEGIN */
+
+.window {
+    background: rgba(0, 0, 0, .4);
+    cursor: pointer;
+    display: none;
+    height: 100%;
+    position: fixed;
+    text-align: center;
+    top: 0;
+    width: 100%;
+    z-index: 10000;
+    transition-duration: 1s;
+}
+
+.window .helper {
+    display: inline-block;
+    height: 100%;
+    vertical-align: middle;
+}
+
+.window>div {
+    cursor: auto;
+    background: linear-gradient(20deg, var(--1clr), var(--2clr));
+    box-shadow: 10px 10px 60px #555;
+    color: var(--txclr);
+    font-size: 32px;
+    display: inline-block;
+    height: auto;
+    max-width: fit-content;
+    min-height: 100px;
+    vertical-align: middle;
+    width: 60%;
+    position: relative;
+    border-radius: 8px;
+    /*padding: 15px 5%;*/
+}
+
+.exitbut {
+    background-color: var(--2clr);
+    border: 3px solid #999;
+    border-radius: 50px;
+    cursor: pointer;
+    display: inline-block;
+    font-family: arial;
+    font-weight: bold;
+    position: absolute;
+    top: -20px;
+    right: -20px;
+    font-size: 25px;
+    line-height: 30px;
+    width: 30px;
+    height: 30px;
+    text-align: center;
+    color: var(--1clr);
+    transition-duration: 0.3s;
+}
+
+.exitbut:hover {
+    background-color: var(--1clr);
+    color: var(--2clr);
+}
+
+
+/* Popup box BEGIN */
+
+.maincolor {
+    color: var(--1clr);
+    content: var(--1clrtxt);
+}
+
+.seccolor {
+    color: var(--2clr);
+    content: counter(--2clrtxt);
+}
+
+.maincolor:hover {
+    background-color: var(--1clr);
+}
+
+.seccolor:hover {
+    background-color: var(--2clr);
+}
+
+.textcolor {
+    border-radius: 8px;
+    background-color: #00000030;
+    transition-duration: 0.3s;
+}
+
+.textcolor:hover {
+    color: var(--txclr);
+}
+
+.name {
+    width: auto;
+    font-size: 64px;
+}
+
+@media all and (min-width:0px) and (max-width: 765px) {
+    #sidebar {
+        bottom: 0px;
+        width: 200px;
+        height: 80px;
+        float: none;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: stretch;
+        gap: 0px;
+        background: linear-gradient(20deg, var(--1clr), var(--2clr));
+        border-radius: 20px 20px 0px 0px;
+        position: absolute;
+        /*center horizontialy*/
+        margin-left: auto;
+        margin-right: auto;
+        width: 100%;
+    }
+    .sbp {
+        background-color: #30303000;
+    }
+    .sbp:hover {
+        background-color: var(--txclr)40;
+    }
+    #sidebar .sbp:first-child {
+        border-radius: 20px 0px 0px 0px;
+    }
+    #sidebar .sbp:last-child {
+        border-radius: 0px 20px 0px 0px;
+    }
+    #main {
+        bottom: 100px !important;
+    }
+}
+
+
+/*create new spin animation*/
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+
+/*ball on background*/
+
+.ball {
+    position: fixed;
+    transform: translate(-50%, -50%);
+    width: 100vw;
+    height: 100vw;
+    left: 0px;
+    top: 0px;
+    background-color: #000000;
+    background: linear-gradient(0deg, var(--1clr), var(--2clr));
+    animation: spin 60s linear infinite;
+    /*center*/
+    z-index: -1;
+}
+
+
+/*
+#sidebar {
+    background-image: linear-gradient(0deg, rgba(255, 255, 255, 0.6) 0px, rgba(255, 255, 255, 0) 100%);
+}*/
+
+
+/*make centered circle with spin animation*/
+
+.circle {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 150vw;
+    height: 150vw;
+    border-radius: 50%;
+    background-color: var(--1clr);
+    background: linear-gradient(0deg, var(--1clr), var(--2clr));
+    /*animation: spin 20s linear 1;*/
+    z-index: -1;
+    margin-top: -75vw;
+    margin-left: -75vw;
+}
+
+.smol {
+    width: 10vw;
+    height: 10vw;
+    border-radius: 50%;
+    margin-top: -5vw;
+    margin-left: -5vw;
+}
+
+@media all and (min-width:0px) and (max-width: 100vh) {
+    .circle {
+        width: 150vh;
+        height: 150vh;
+        margin-top: -75vh;
+        margin-left: -75vh;
+    }
+    .smol {
+        width: 5vh;
+        height: 5vh;
+        margin-top: -2.5vh;
+        margin-left: -2.5vh;
+    }
+}
